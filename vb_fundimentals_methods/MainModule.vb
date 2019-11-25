@@ -13,13 +13,17 @@
 
         ' Code to calculate money changes profit, loss etc
         Dim profit As New Product
+        Dim new_calc As Decimal
 
         profit.StandardCost = 250
         profit.ListPrice = 500
 
-
-        Console.WriteLine(profit.CalculateProfit())
-        Console.WriteLine(profit.CalculateProfit(700))
+        new_calc = profit.CalculateProfit(700)
+        If new_calc < 0 Then
+            Console.WriteLine($"No profit made with a loss of {new_calc}")
+        ElseIf new_calc > 0 Then
+            Console.WriteLine($"A profit of {new_calc} was made")
+        End If
 
         Console.ReadKey()
     End Sub
