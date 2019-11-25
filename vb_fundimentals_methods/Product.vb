@@ -1,4 +1,6 @@
 ﻿Public Class Product
+    ' This is how you can initialse variables with a constructor.
+    ' By intialising you can set the default values for variables in a class.
     Sub New()
         StandardCost = 500
         ListPrice = 900
@@ -23,6 +25,14 @@
             Return Name + "-" + ProductNumber
         End Get
     End Property
+
+    ' This next fucntion demonstartes how to use a shared method
+    Shared Function CalculateTheProfit(ByVal cost As Decimal, ByVal price As Decimal) As Decimal
+        Return price - cost
+        ' When this function is called, an instace of the class does not need to be made
+        ' In this case we can simply add values to cost and price when we call the function
+        ' ie, Product.CalculateTheProfit(900, 1400)
+    End Function
 
     Function CalculateSellEndDate(ByVal days As Integer) As DateTime ' Functions have to have a datatype assgined to them unlike Sub qu
         ' This does not return a value, only performs some kind of operation 

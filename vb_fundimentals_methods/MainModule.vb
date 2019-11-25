@@ -21,6 +21,10 @@
             Console.WriteLine($"A profit of {new_calc} was made")
         End If
 
+        ' Code to demonstrate how shared fucntions work using the product class
+        ' Notice how an instace of the class was not needed
+        Console.WriteLine(Product.CalculateTheProfit(900, 1400))
+
         Console.ReadKey()
     End Sub
 
