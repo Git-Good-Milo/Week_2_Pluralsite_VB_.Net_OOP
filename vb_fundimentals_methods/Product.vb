@@ -1,4 +1,9 @@
 ﻿Public Class Product
+    Sub New()
+        StandardCost = 500
+        ListPrice = 900
+        SellStartDate = DateTime.Now
+    End Sub
 
     Public Property ProductID As Integer
     Public Property Name As String
@@ -29,12 +34,29 @@
         ' This will provide the same output as the Return parameter
     End Function
 
-    Function CalculateProfit(Optional ByVal newCost As Decimal = 0) As Decimal
+    ' The folowing functions will be used to demonstarte Overloading methods
+
+    Overloads Function CalculateProfit() As Decimal
+        Return CalculateProfit(StandardCost)
+    End Function
+
+    Overloads Function CalculateProfit(ByVal newCost As Decimal)
         If newCost <> 0 Then
             StandardCost = newCost
         End If
 
         Return ListPrice - StandardCost
     End Function
+
+
+
+    ' This is a function to demonstarte optional methods
+    'Function CalculateProfit(Optional ByVal newCost As Decimal = 0) As Decimal
+    '    If newCost <> 0 Then
+    '        StandardCost = newCost
+    '    End If
+
+    '    Return ListPrice - StandardCost
+    'End Function
 
 End Class

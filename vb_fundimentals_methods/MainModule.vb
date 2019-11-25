@@ -1,5 +1,4 @@
 ﻿Module MainModule
-
     Sub Main()
 
         ' Code to calculate dates from Product Clss
@@ -15,10 +14,7 @@
         Dim profit As New Product
         Dim new_calc As Decimal
 
-        profit.StandardCost = 250
-        profit.ListPrice = 500
-
-        new_calc = profit.CalculateProfit(700)
+        new_calc = profit.CalculateProfit()
         If new_calc < 0 Then
             Console.WriteLine($"No profit made with a loss of {new_calc}")
         ElseIf new_calc > 0 Then
