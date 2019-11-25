@@ -24,6 +24,17 @@
         SellEndDate = SellStartDate.AddDays(days)
 
         Return SellEndDate
+        ' Instead of using Return, you can assgin the ouptput you want to the name of the function
+        ' ie, <CalculateSellEndDate = SellEndDate>
+        ' This will provide the same output as the Return parameter
+    End Function
+
+    Function CalculateProfit(Optional ByVal newCost As Decimal = 0) As Decimal
+        If newCost <> 0 Then
+            StandardCost = newCost
+        End If
+
+        Return ListPrice - StandardCost
     End Function
 
 End Class
